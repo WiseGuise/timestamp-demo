@@ -22,15 +22,15 @@ app.get("/api/timestamp/", (req, res) => {
 
 
 app.get("/api/timestamp/:date_string?", (req, res) => {
-  var requireString = req.params.date_string;
+  var date_string = req.params.date_string;
   var returnDate;
 
   if (!isNaN(date_string) && date_string.length == 13) {
     date = (parseInt(date_string, 10));
   } else {
-    if (/^/d{4}-{2}-{2}.test(requireString)) {
-      requireString = parseInt(requireString);
-      returnDate = new Date(requireString);
+    if (/^/d{4}-{2}-{2}.test(date_string)) {
+      date_string = parseInt(date_string);
+      returnDate = new Date(date_string);
     } else {
       if (returnDate.getTime() !== returnDate.getTime()) {
         res.json({ error: "Invalid Date" });
