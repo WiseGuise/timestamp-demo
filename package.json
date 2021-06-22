@@ -1,8 +1,8 @@
 {
-  "name": "fcc-api-projects-boilerplate",
+  "name": "timestamp-demo",
   "version": "0.0.1",
   "description": "An FCC Backend Challenge",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
