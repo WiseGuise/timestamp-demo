@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Timestamp Microservice</title>
+    <style>
+      body {
+        font-family: Roboto;
+        color: black;
+        background-color: lightblue;
+        margin-top: 100px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      h3 {
+        font-size: 24px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      li,
+      p {
+        font-size: 18px;
+      }
+
+      code {
+        font-size: 100%;
+      }
+
+      a {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>API - Timestamp Microservice</h1>
+
+      <h3>Click for Magic</h3>
+      <ul>
+        <li>
+          <a href="/api/timestamp/2015-12-25">[project url]/api/2015-12-25</a>
+        </li>
+        <li>
+          <a href="/api/timestamp/1451001600000"
+            >[project url]/api/1451001600000</a
+          >
+        </li>
+        <li>
+          <a href="/api/:date?">[project url]/api/:date?</a>
+        </li>
+        <li>
+          <a href="/api/timestamp/">[project url]/api/</a>
+        </li>
+      </ul>
+
+      <h3>Example Output:</h3>
+      <p>
+        <code
+          >{"unix":1451001600000,"utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code
+        >
+      </p>
+    </div>
+  </body>
+  <footer>By James Ragain</footer>
+</html>
