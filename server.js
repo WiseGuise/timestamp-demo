@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 // require statements
 
 app.get("/api/timestamp/:dateString?", (req, res) => {
-  const date_string = req.params.dateString;
+  const date_string = req.params.date_string;
   let date;
 
   if (!date_string) {
