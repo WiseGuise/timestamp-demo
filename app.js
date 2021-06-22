@@ -1,15 +1,38 @@
-// create an express app
-const express = require("express")
-const app = express()
+const express = require("express");
 
-// use the express-static middleware
-app.use(express.static("public"))
+const cors = require("cors");
+const app = express();
+const port = process.env.port || 3000;
 
-// define the first route
-app.get("/", function (req, res) {
-  res.send("<h1>Hello World!</h1>")
-})
+app.use(cors({ optionSuccessStatus: 200 }));
 
-// start the server listening for requests
-app.listen(process.env.PORT || 3000,
-	() => console.log("Server is running..."));
+app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.sendFile(`${__dirname}/views/index.html`);
+});
+
+// require statements
+
+app.get("/api/timestamp/:dateString?", (req, res) => {
+  const dateString = req.params.dateString;
+  let date;
+
+  if (!dateString) {
+    date = new Date();
+  } else {
+    if (!isNaN(dateString)) {
+      date = new Date(parseInt(dateString, 10));
+    } else {
+      date = new Date(dateString);
+    }
+  }
+
+  if (date.toString() === "Invalid Date") {
+    res.json({ error: "Invalid Date" });
+  } else {
+    res.json({ unix: date.getTime(), utc: date.toUTCString() });
+  }
+});
+
+app.listen(port, () => console.log(`App listening on port ${port}!`));
