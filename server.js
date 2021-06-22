@@ -2,7 +2,7 @@ const express = require("express");
 
 const cors = require("cors");
 const app = express();
-const port = process.env.port || 3000;
+
 
 app.use(cors({ optionSuccessStatus: 200 }));
 
@@ -35,4 +35,5 @@ app.get("/api/timestamp/:dateString?", (req, res) => {
   }
 });
 
-app.listen(port, () => console.log(`App listening on port ${port}!`));
+app.listen(process.env.PORT || 3000,
+	() => console.log("Server is running..."));
