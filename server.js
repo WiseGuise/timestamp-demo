@@ -30,3 +30,35 @@ app.get("/api/hello", function (req, res) {
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
+let responseObject = {}
+app.get("/api/timestamp/:date_string", (req, res) => {
+  
+  let date_string= req.params.date_string;
+  
+  if (date_string.includes("-")) {
+    responseObject["unix"] = new Date(date_string).getTime();
+    responseObject["utc"] = new Date(date_string).toUTCString();
+  
+  } else {
+  
+    // timestamp
+    date_string= parseInt(date_string);
+    responseObject["unix"] = new Date(date_string).getTime();
+    responseObject["utc"] = new Date(date_string).toUTCString();
+  }
+  
+  if (!responseObject["unix"] || !responseObject["utc"]) {
+    res.json({error: "Invalid Date"});
+  }
+  
+    
+  res.json(responseObject);
+});
+
+app.get("/api/timestamp", (req, res) => {
+  responseObject["unix"] = new Date().getTime();
+  responseObject["utc"] = new Date().toUTCString();
+  
+  res.json(responseObject);
+});
