@@ -1,46 +1,39 @@
-/****** Main Styling ******/
-
 body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	color: #222;
-	background-color: #FaFaFa;
-	text-align: center;
-	line-height: 1.4em;
-}
+        font-family: Roboto;
+        color: black;
+        background-color: lightblue;
+        margin-top: 100px;
+      }
 
-.container {
-	padding: 0;
-	margin-top: 40px;
-}
+      .container {
+        width: 100%;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+      }
 
-h3 {
-  margin-top: 30px;
-}
+      h1 {
+        font-size: 40px;
+      }
 
-hr {
-	margin: 25px;
-}
+      h3 {
+        font-size: 24px;
+      }
 
-.footer {
-	margin-top: 40px;
-}
+      li {
+        margin-bottom: 10px;
+      }
 
-code {
-  font-family: monospace;
-  padding: 2px;
-  color: black;
-  background-color: #fff;
-}
+      li,
+      p {
+        font-size: 18px;
+      }
 
-ul {
-	list-style-type: none;
-}
+      code {
+        font-size: 100%;
+      }
 
-li {
-  margin-bottom: 0.5em;
-}
-
-a {
-	color: #2574A9;
-}
+      a {
+        color: red;
+      }
